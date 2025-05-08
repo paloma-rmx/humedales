@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## INICIAR EL PROYECTO
 
-## Getting Started
+Primero, instala todas las dependencias:
 
-First, run the development server:
+```bash
+npm install
+```
+Ahora corre el servidor local:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver tu página.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Puedes empezar a editar la página modificando `app/page.js`. La página se va a actualizar automáticamente cada vez que guardes el archivo `command + s`.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Debes mantener el servidor local andando para ver tus cambios aplicados. 
 
-## Learn More
+Para detener el servidor local:
+`control + c`
 
-To learn more about Next.js, take a look at the following resources:
+# Recuerda
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Crear una rama de trabajo a partir de tu rama principal (main): 
+```bash
+git checkout main; git checkout -b {nombre-de-tu-rama-de-trabajo}
+```
+Ejemplo: 
+```bash
+git checkout main; git checkout -b add-misfunciones
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Agrega, haz commit de tus cambios y súbelos a tu repositorio: 
+```bash
+git add .
+```
+```bash
+git commit -m 'mensaje'
+```
+```bash
+git push --set-upstream origin {nombre-de-tu-rama-de-trabajo}
+```
+Ejemplo: 
+```bash
+git push --set-upstream origin add-misfunciones
+```
 
-## Deploy on Vercel
+- Crear un pull request en Github: [visita este sitio](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request#creating-the-pull-request)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Unir los cambios (merge) a la rama principal (main): [visita este sitio](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request#merging-a-pull-request)
