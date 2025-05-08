@@ -11,6 +11,18 @@
   gap: 24px;
 }
 
+/* FIGURE STYLES */
+.figure{
+  display: flex
+}
+
+.figure img{
+  width: 100%;
+  height: auto;
+  max-width: 50%;
+  object-fit: cover;
+}
+
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
