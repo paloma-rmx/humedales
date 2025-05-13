@@ -1,9 +1,6 @@
 import styles from "./heading.module.css"
-export default function heading(props){
-
-    const texto = props.texto;
-    const orient = props.orientacion;
-    const orientation = orient === "vertical" ? "vertical-lr" : "unset";
+export default function Heading({texto, orientacion}) {
+    const orientation = orientacion === "vertical" ? "vertical-lr" : "unset";
     const inlineStyle = {writingMode: orientation}
     // El problema era un typo en la palabra style. Debe ser style, no styles
     return(
