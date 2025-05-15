@@ -13,28 +13,32 @@
 }
 
 /* FIGURE STYLES agregar los estilos para la card*/
+.body{
+  background-color: #B4C8D8;
+  min-height: 100%;
+}
+
 .section{
   display: flex;
 }
 .figure{
   display: flex;
   margin: 6rem;
-  background-color: #B4C8D8;
   border: 1px solid #01568E;
 }
 
 .figure img{
   width: 100%;
   height: auto;
-  max-width: 45%;
+  max-width: 50%;
   object-fit: cover;
   border: 1px solid #01568E;
 }
 
 .ide{
   font-size: 1.3rem;
-  border: 1px solid #01568E;
-  
+  background-color: #01568E;
+  color: #B4C8D8;
 }
 
 .figcaption{
@@ -43,42 +47,76 @@
   border: 1px solid #01568E;
 }
 
+.caption_container{
+  position:relative
+}
+
+.caption_container span{
+  position:absolute;
+  top:0;
+  right:0;
+  padding: 0.5rem 1rem;
+  height: 40px;
+}
+
 .figcaption_title{
   text-transform: uppercase;
   font-size: 1.8rem;
-  border: 1px solid #01568E;
+  border-bottom: 1px solid #01568E;
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-top:40px;
+  padding-bottom: 2px;
 }
 
 .figcaption_subtitle{
   font-size: 1.3rem;
-  border: 1px solid #01568E;
+  border-bottom: 1px solid #01568E;
   padding-left: 2rem;
   padding-right: 2rem;
+  padding-top: 10px;
+  padding-bottom: 2px;
 }
 
 .figcaption_text{
   font-size: 1rem;
-  border: 1px solid #01568E;
+  border-bottom: 1px solid #01568E;
   padding-left: 2rem;
   padding-right: 2rem;
+  height: 222px;
+  padding-top: 10px;
 }
 
 .figcaption_info{
   display: grid;
   grid-template-columns: 1fr 1fr;
-  border: 1px solid #01568E;
   padding-left: 2rem;
-  padding-right: 2rem;
+  height: 222px;
+}
+
+.left_list{
+  padding-top: 10px;  
+}
+
+.left_list li::marker{
+  display: none;
+  color:#B4C8D8
 }
 
 .right_list{
   text-transform: uppercase;
   font-size: 1rem;
-  border: 1px solid #01568E;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  border-left: 1px solid #01568E;
+}
+
+.right_list li{
+  border-bottom: 1px solid #01568E;
+  padding: 5px 2rem;
+}
+
+.right_list li::marker{
+  display: none;
+  color:#B4C8D8
 }
 
 
