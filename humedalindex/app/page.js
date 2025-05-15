@@ -23,10 +23,10 @@ export default function Home() {
             return res?.data;
           }).then((datos) => {
             return datos?.values?.map((item, i) => {
-              const [id, scientificName, commonName, description, relationsChain, taxonomyGroup, extinsionRisk, distribution, environment, relation] = item;
-
+              const [id, scientificName, commonName, description, relationsChain, taxonomyGroup, extinctionRisk, distribution, environment, relation] = item;
+              const relChain = relationsChain.split(".").map((item) => item.trim());
               return (
-                <figure key={id} className={styles.figure}>
+                <figure key={`id-${id}${i}`} className={styles.figure}>
                   <Image
                     src="https://cimanorte.com/wp-content/uploads/swallow-3439543_1920.jpg"
                     alt="Golorondrina"
@@ -35,7 +35,7 @@ export default function Home() {
                     className={styles.image} />
                   <figcaption className={styles.figcaption}>
                     <div className={styles.caption_container}>
-                      <span className={styles.ide}>1</span>
+                      <span className={styles.ide}>{id}</span>
                       <h2 className={styles.figcaption_title}>{scientificName}</h2>
                     </div>
                     <h3 className={styles.figcaption_subtitle}>{commonName}</h3>
@@ -44,17 +44,19 @@ export default function Home() {
                     </p>
                     <div className={styles.figcaption_info}>
                       <ul className={styles.left_list}>
-                        <li>animales.</li> 
-                        <li>cordados. </li>
-                        <li>aves. </li>
-                        <li>aves de percha. </li>
-                        <li>golondrinas. </li>
-                        <li>golondrinas típicas.</li> </ul>
+                        {
+                          relChain.map((item, i) => {
+                            return (
+                              <li key={`id-${item}${i}`}>{item}</li>
+                            )
+                          })
+                        }
+                      </ul>
                       <ul className={styles.right_list}>
-                        <li>aves</li>
-                        <li>riesgo menor</li>
-                        <li>nativa</li>
-                        <li>terrestre</li>
+                        <li>{taxonomyGroup}</li>
+                        <li>{extinctionRisk}</li>
+                        <li>{distribution}</li>
+                        <li>{environment}</li>
                       </ul>
                     </div>
                   </figcaption>
