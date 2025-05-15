@@ -1,0 +1,112 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  grid-row-start: 2;
+  background-color: #B4C8D8;
+}
+
+.footer {
+  grid-row-start: 3;
+  display: flex;
+  gap: 24px;
+}
+
+/* FIGURE STYLES agregar los estilos para la card*/
+.section{
+  display: flex;
+}
+.figure{
+  display: flex;
+  margin: 6rem;
+  background-color: #B4C8D8;
+  border: 1px solid #01568E;
+}
+
+.figure img{
+  width: 100%;
+  height: auto;
+  max-width: 45%;
+  object-fit: cover;
+  border: 1px solid #01568E;
+}
+
+.ide{
+  font-size: 1.3rem;
+  border: 1px solid #01568E;
+  
+}
+
+.figcaption{
+  font-family: 'Courier New', Courier, monospace;
+  color: #01568E;
+  border: 1px solid #01568E;
+}
+
+.figcaption_title{
+  text-transform: uppercase;
+  font-size: 1.8rem;
+  border: 1px solid #01568E;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.figcaption_subtitle{
+  font-size: 1.3rem;
+  border: 1px solid #01568E;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.figcaption_text{
+  font-size: 1rem;
+  border: 1px solid #01568E;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.figcaption_info{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 1px solid #01568E;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.right_list{
+  text-transform: uppercase;
+  font-size: 1rem;
+  border: 1px solid #01568E;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+
+/* Enable hover only on non-touch devices */
+@media (hover: hover) and (pointer: fine) {
+  a.primary:hover {
+    background: var(--button-primary-hover);
+    border-color: transparent;
+  }
+
+  a.secondary:hover {
+    background: var(--button-secondary-hover);
+    border-color: transparent;
+  }
+
+  .footer a:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    align-items: center;
+  }
+  .footer {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
