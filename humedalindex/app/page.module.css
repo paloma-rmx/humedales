@@ -3,7 +3,6 @@
   flex-direction: column;
   gap: 32px;
   grid-row-start: 2;
-  background-color: #B4C8D8;
 }
 
 .footer {
@@ -14,17 +13,19 @@
 
 /* FIGURE STYLES agregar los estilos para la card*/
 .body{
-  background-color: #B4C8D8;
   min-height: 100%;
 }
 
-.section{
+/* .section{
   display: flex;
-}
+} */
 .figure{
+  padding: 2rem;
   display: flex;
-  margin: 6rem;
+  margin: 0 auto;
+  max-width: 80%;
   border: 1px solid #01568E;
+  background-color: #b4c8d8;
 }
 
 .figure img{
