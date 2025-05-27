@@ -14,13 +14,13 @@
 /*MOSAICO FOTOS*/
 .main {
   min-height: 100vh;
-  overflow: hidden;
+  
 }
 
 .mosaicoWrapper {
-  width: 100vw;
-  height: 100vh;
-  overflow: scroll;
+  width: 5000px;
+  overflow-x: scroll;
+  overflow-y: auto;
   cursor: grab;
 }
 
@@ -31,17 +31,24 @@
 /* Grid que recuerda a tu layout tipo cruz */
 .mosaico {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: 200px;
-  gap: 16px;
-  padding: 64px;
-  width: max-content;
+  grid-template-columns: repeat(auto-fill, minmax(300, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 200px;
+  /* padding: 64px; */
+}
+
+.mosaico img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
 }
 
 /* Imagen como card
 .card {
   position: relative;
-  overflow: hidden;
+  
   border-radius: 8px;
   background-color: #ccc;
   aspect-ratio: 1 / 1;

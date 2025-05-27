@@ -3,15 +3,14 @@ import Image from "next/image";
 import { getSheetsData } from "./helpers/sheets";
 
 export default async function Home() {
-
+  
   // Acá se encarga de obtener los datos de la hoja de cálculo
   const dataSheet = await getSheetsData(
-    process.env.GOOGLE_SHEETS_ID,
+    process.env.NEXT_PUBLIC_GOOGLE_SHEETS_ID,
     "raw_data!A2:K100"
   );
 
-  let {data} = dataSheet;
-  console.log("Datos de la hoja de cálculo:", data);      
+  const {data} = dataSheet;
 
   return (
     <main className={styles.main}>
@@ -20,12 +19,11 @@ export default async function Home() {
         <div className={styles.mosaico}>
           {data.values.map((item, index) => {
             const [id, scientificName, commonName, description, relationsChain, taxonomyGroup, extinctionRisk, distribution, environment, relation, imagen_url] = item;
-            console.log(imagen_url);
-            const imagenSRC =  `/public/ff-img/${imagen_url}.jpg`;
-            return(<image src={imagenSRC} width="300" height="300" alt={scientificName}></image>)
-          }
-
-          )}
+            const imagenSRC =  `/ff-img/${imagen_url}.jpg`;
+            return(
+              <Image key={`id-${id}-${index}`} src={imagenSRC} width="300" height="300" alt={scientificName}/>
+            )
+          })}
         </div>
 
 

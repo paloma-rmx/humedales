@@ -3,7 +3,7 @@ import {google} from 'googleapis';
 export async function getSheetsData(spreadsheetId, range) {
   let credentials;
   try {
-    credentials = JSON.parse(process.env.GOOGLE_SHEETS_CREDENTIALS_SAJSON);
+    credentials = JSON.parse(process.env.NEXT_PUBLIC_CREDENTIALS_SAJSON);
   } catch (error) {
     console.error('Invalid credentials - Error:', error);
     throw error;
