@@ -2,21 +2,37 @@ import styles from "./page.module.css";
 import Image from "next/image";
 import { getSheetsData } from "./helpers/sheets";
 
-export default function Home() {
+export default async function Home() {
 
   // Acá se encarga de obtener los datos de la hoja de cálculo
-  const data = getSheetsData(
+  const dataSheet = await getSheetsData(
     process.env.GOOGLE_SHEETS_ID,
-    "raw_data!A2:J39"
+    "raw_data!A2:K100"
   );
+
+  let {data} = dataSheet;
+  console.log("Datos de la hoja de cálculo:", data);      
 
   return (
     <main className={styles.main}>
       {/* Acá va el contenido principal html */}
-      <section className={styles.section}>
+      <section className={styles.mosaicoWrapper}>
+        <div className={styles.mosaico}>
+          {data.values.map((item, index) => {
+            const [id, scientificName, commonName, description, relationsChain, taxonomyGroup, extinctionRisk, distribution, environment, relation, imagen_url] = item;
+            console.log(imagen_url);
+            const imagenSRC =  `/public/ff-img/${imagen_url}.jpg`;
+            return(<image src={imagenSRC} width="300" height="300" alt={scientificName}></image>)
+          }
+
+          )}
+        </div>
+
 
         {
+          /*
           data.then((res) => {
+
             if (res.status !== 200) {
               throw new Error(res.message);
             }
@@ -64,7 +80,7 @@ export default function Home() {
               )
             })
           })
-        }
+          */}
       </section>
       
     </main>

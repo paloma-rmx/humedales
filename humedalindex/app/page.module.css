@@ -11,6 +11,47 @@
   gap: 24px;
 }
 
+/*MOSAICO FOTOS*/
+.main {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.mosaicoWrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+  cursor: grab;
+}
+
+.mosaicoWrapper:active {
+  cursor: grabbing;
+}
+
+/* Grid que recuerda a tu layout tipo cruz */
+.mosaico {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 200px;
+  gap: 16px;
+  padding: 64px;
+  width: max-content;
+}
+
+/* Imagen como card
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #ccc;
+  aspect-ratio: 1 / 1;
+}
+
+.card img {
+  object-fit: cover;
+}*/
+
+
 /* FIGURE STYLES agregar los estilos para la card*/
 .body{
   min-height: 100%;
