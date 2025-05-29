@@ -9,6 +9,9 @@ const nextConfig = {
         pathname: '/wp-content/uploads/**',
       },
     ],
+  },
+  experimental: {
+    scrollRestoration: false
   }
 };
 
