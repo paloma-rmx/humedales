@@ -1,73 +1,47 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  background: #eaeaea;
+  overflow: auto;
 }
 
-.footer {
-  grid-row-start: 3;
-  display: flex;
-  gap: 24px;
-}
-
-/*MOSAICO FOTOS*/
-.main {
-  min-height: 100vh;
-  
-}
-
-.mosaicoWrapper {
-  width: 5000px;
-  overflow-x: scroll;
-  overflow-y: auto;
-  cursor: grab;
-}
-
-.mosaicoWrapper:active {
-  cursor: grabbing;
-}
-
-/* Grid que recuerda a tu layout tipo cruz */
-.mosaico {
+.gridContainer {
+  padding: 70px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 200px;
-  /* padding: 64px; */
+  grid-template-columns: repeat(18, 70px);
+  grid-auto-rows: 70px;
+  position: relative;
 }
 
-.mosaico img {
+
+.gridContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  background-image:
+    linear-gradient(to right, #005696 0.75pt, transparent 0.75pt),
+    linear-gradient(to bottom, #005696 0.75pt, transparent 0.75pt);
+  background-size: 70px 70px; /* 50px + 10px gap */
+  pointer-events: none;
+  z-index: 0;
 }
 
-/* Imagen como card
-.card {
+.gridItem {
+  background-size: cover;
+  background-position: center;
   position: relative;
-  
-  border-radius: 8px;
-  background-color: #ccc;
-  aspect-ratio: 1 / 1;
+  z-index: 1;
+  overflow: hidden;
 }
 
-.card img {
-  object-fit: cover;
-}*/
-
-
-/* FIGURE STYLES agregar los estilos para la card*/
-.body{
-  min-height: 100%;
+.gridItem:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s ease;
 }
 
-/* .section{
-  display: flex;
-} */
-.figure{
+/* Keep old styles for potential future use */
+.figure {
   padding: 2rem;
   display: flex;
   margin: 0 auto;
@@ -76,7 +50,7 @@
   background-color: #b4c8d8;
 }
 
-.figure img{
+.figure img {
   width: 100%;
   height: auto;
   max-width: 50%;
@@ -84,41 +58,41 @@
   border: 1px solid #01568E;
 }
 
-.ide{
+.ide {
   font-size: 1.3rem;
   background-color: #01568E;
   color: #B4C8D8;
 }
 
-.figcaption{
+.figcaption {
   font-family: 'Courier New', Courier, monospace;
   color: #01568E;
   border: 1px solid #01568E;
 }
 
-.caption_container{
-  position:relative
+.caption_container {
+  position: relative;
 }
 
-.caption_container span{
-  position:absolute;
-  top:0;
-  right:0;
+.caption_container span {
+  position: absolute;
+  top: 0;
+  right: 0;
   padding: 0.5rem 1rem;
   height: 40px;
 }
 
-.figcaption_title{
+.figcaption_title {
   text-transform: uppercase;
   font-size: 1.8rem;
   border-bottom: 1px solid #01568E;
   padding-left: 2rem;
   padding-right: 2rem;
-  padding-top:40px;
+  padding-top: 40px;
   padding-bottom: 2px;
 }
 
-.figcaption_subtitle{
+.figcaption_subtitle {
   font-size: 1.3rem;
   border-bottom: 1px solid #01568E;
   padding-left: 2rem;
@@ -127,7 +101,7 @@
   padding-bottom: 2px;
 }
 
-.figcaption_text{
+.figcaption_text {
   font-size: 1rem;
   border-bottom: 1px solid #01568E;
   padding-left: 2rem;
@@ -136,51 +110,40 @@
   padding-top: 10px;
 }
 
-.figcaption_info{
+.figcaption_info {
   display: grid;
   grid-template-columns: 1fr 1fr;
   padding-left: 2rem;
   height: 222px;
 }
 
-.left_list{
-  padding-top: 10px;  
+.left_list {
+  padding-top: 10px;
 }
 
-.left_list li::marker{
+.left_list li::marker {
   display: none;
-  color:#B4C8D8
+  color: #B4C8D8;
 }
 
-.right_list{
+.right_list {
   text-transform: uppercase;
   font-size: 1rem;
   border-left: 1px solid #01568E;
 }
 
-.right_list li{
+.right_list li {
   border-bottom: 1px solid #01568E;
   padding: 5px 2rem;
 }
 
-.right_list li::marker{
+.right_list li::marker {
   display: none;
-  color:#B4C8D8
+  color: #B4C8D8;
 }
-
 
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
-
   .footer a:hover {
     text-decoration: underline;
     text-underline-offset: 4px;
@@ -188,12 +151,11 @@
 }
 
 @media (max-width: 600px) {
+  .gridContainer {
+    grid-template-columns: repeat(10, 50px);
+  }
+  
   .main {
     align-items: center;
-  }
-  .footer {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
   }
 }
