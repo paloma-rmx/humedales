@@ -37,7 +37,7 @@ export default function ClientImage({ item }) {
         src={"/ff-img/" + item.imagen_url + ".jpg"}
         alt={item.scientificName}
         fill
-        style={{ objectFit: "cover" }}
+        style={{ objectFit: "contain" }}
       />
       {
         activo && <ModalContainer item={selectedItem} showModal={setActivo} />
