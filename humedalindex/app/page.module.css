@@ -35,19 +35,22 @@
   overflow: hidden;
 }
 
-.gridItem:hover {
+/* .gridItem:hover {
   transform: scale(1.02);
   transition: transform 0.2s ease;
-}
+} */
 
 /* Keep old styles for potential future use */
 .figure {
   padding: 2rem;
   display: flex;
   margin: 0 auto;
-  max-width: 80%;
   border: 1px solid #01568E;
   background-color: #b4c8d8;
+  position: fixed;
+  top:0; left:0;
+  right:0; bottom:0;
+  z-index: 999999;
 }
 
 .figure img {
