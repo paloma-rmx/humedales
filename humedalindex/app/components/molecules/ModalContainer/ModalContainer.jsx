@@ -3,11 +3,25 @@ import styles from '@/app/page.module.css'
 import Image from 'next/image';
 
 export default function ModalContainer({ item, showModal }) {
+  const color = item?.color || null;
+  let estilosFicha = {};
+  switch(color){
+    case 'red':
+      // Do something for red
+      estilosFicha = { backgroundColor: 'red', color: '#ff0000' };
+      break;
+      // Do something for blue
+    case 'blue':
+      estilosFicha = { backgroundColor: 'blue', color: '#0000ff' };
+      break;
+    default:
+      // Do something for default case
+  }
   return (
     <>
       {
       showModal && (
-        <figure className={styles.figure}>
+        <figure className={styles.figure} style={estilosFicha}>
           <button style={{ padding:"16px", backgroundColor:"transparent", border: "none", position: "absolute", right: 0, top: 0, cursor: "pointer", fontWeight: "bold" }} onClick={() => showModal(false)}>X</button>
           <Image
             src={

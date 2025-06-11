@@ -27,6 +27,7 @@ export default function ClientImage({ item }) {
         distribution: item.distribution,
         environment: item.environment,
         relation: item.relation,
+        color: item.color || null
       };
     });
   };

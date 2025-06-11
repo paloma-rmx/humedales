@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "../../page.module.css";
 import ClientImage from "../atoms/ClientImage/ClientImage";
 
@@ -58,6 +57,7 @@ export default function Gridcontainer({ data }) {
       environment,
       relation,
       imagen_url,
+      color
     ] = item;
 
     const { w, h } = imageSizes[Math.floor(Math.random() * imageSizes.length)];
@@ -89,6 +89,7 @@ export default function Gridcontainer({ data }) {
           distribution,
           environment,
           relation,
+          color
         });
 
         placed = true;
@@ -99,16 +100,16 @@ export default function Gridcontainer({ data }) {
 
   return (
     <>
-      {positionedItems.map((item) => (
+      {positionedItems.map((especie) => (
         <div
-          key={"id-" + item.id + "-" + item.index}
+          key={"id-" + especie.id + "-" + especie.index}
           className={styles.gridItem}
           style={{
-            gridColumn: item.x + " / span " + item.w,
-            gridRow: item.y + " / span " + item.h,
+            gridColumn: especie.x + " / span " + especie.w,
+            gridRow: especie.y + " / span " + especie.h,
           }}
         >
-          <ClientImage item={item} />
+          <ClientImage item={especie} />
         </div>
       ))}
     </>
